@@ -198,6 +198,46 @@
 		  .circular--square {
   			border-radius: 50%;
 		}
+
+		.container1 {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 	</style>	
 </head>
 <body>
@@ -304,8 +344,13 @@ La biblioteca será un espacio para jóvenes en el que puedan leer y aprender.</
 <section style="background-color:#F5FFFA" class="content" id="porta">
 <br>
 <br>
-		<a href="https://drive.google.com/drive/folders/1VTudJqrk-CdeUWDDFTzv_siy4oyBvoF1?usp=sharing" target="_blank"><img src="media/folio.PNG" width="400" height="400" align="right" HSPACE="20" VSPACE="20"></a>
-
+<div class="container1">
+  <a href="https://drive.google.com/drive/folders/1VTudJqrk-CdeUWDDFTzv_siy4oyBvoF1?usp=sharing" target="_blank"><img src="media/folio.PNG" width="400" height="400" align="right" HSPACE="20" VSPACE="20"></a>
+  <div class="overlay">
+    <div class="text">Hello World</div>
+  </div>
+</div>
+		
 		<h3>Portafolio</h3><br>
 		<p>En esta sección verás más sobre diferentes logros, evidencia de ellos son los diplomas a los cuales podrás acceder 
 		dando clic en la imagen que se encuentra a tu derecha. </p>
