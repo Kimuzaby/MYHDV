@@ -153,7 +153,7 @@
 		  	width: 100%;
 		  }
 
-		  .zoom .text{
+		  .zoom .texto{
 		  	position: absolute;
 		  	right: 0;
 		  	width: 100%;
@@ -198,6 +198,88 @@
 		  .circular--square {
   			border-radius: 50%;
 		}
+
+		.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #84b6f4;
+  border-radius: 50%;
+}
+
+.container:hover .overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 	</style>	
 </head>
 <body>
@@ -215,7 +297,7 @@
 </header>	
 
 	<section class="zoom">
-		<img src="media/texto.PNG" class="text">
+		<img src="media/texto.PNG" class="texto">
 		<img src="media/mont1.PNG" class="layer1">
 		<img src="media/mont2.PNG" class="layer2">
 	</section>
@@ -223,6 +305,7 @@
 	<section style="background-color:#F5FFFA" class="content" id="foto">
 <br>
 <br>
+<button class="button" style="vertical-align:middle"><span>English version</span></button>
 		<img src="media/foto.PNG" width="400" height="400" align="right" HSPACE="20" VSPACE="20">
 
 		<h3>Pequeña descripción de mi persona</h3><br>
@@ -304,13 +387,26 @@ La biblioteca será un espacio para jóvenes en el que puedan leer y aprender.</
 <section style="background-color:#F5FFFA" class="content" id="porta">
 <br>
 <br>
-		<a href="https://drive.google.com/drive/folders/1VTudJqrk-CdeUWDDFTzv_siy4oyBvoF1?usp=sharing" target="_blank"><img src="media/folio.PNG" width="400" height="400" align="right" HSPACE="20" VSPACE="20"></a>
+
+		
 
 		<h3>Portafolio</h3><br>
-		<p>En esta sección verás más sobre diferentes logros, evidencia de ellos son los diplomas a los cuales podrás acceder 
-		dando clic en la imagen que se encuentra a tu derecha. </p>
+		<p>En esta sección verás más sobre diferentes logros, evidencia de ellos son los diplomas a los <b>cuales podrás acceder 
+		dando clic en la imagen que se encuentra abajo. </b></p>
 		<br>
+		<center>
 
+		<div class="container">
+	
+  <img src="media/folio.PNG" alt="Avatar" class="image">
+
+  <div class="overlay">
+  	<a href="https://drive.google.com/drive/folders/1VTudJqrk-CdeUWDDFTzv_siy4oyBvoF1?usp=sharing" target="_blank">
+    <div class="text">Clic Me!</div>
+  </a>
+  </div>
+</div>
+</center>
 		<p>De igual manera uno de mis proyectos en grupo está en esta página.</p><br>
 
 		<center><iframe src="https://average-page-xavier.netlify.app/" height="500" width="600" title="Iframe Example"></iframe></center>
@@ -320,10 +416,11 @@ La biblioteca será un espacio para jóvenes en el que puedan leer y aprender.</
 
 <section style="background-color:#F0FFFF" class="content" id="conta">
 	<h3>Contacto</h3><br>
-	<p>Si desea contactarme por un medio, le comparto midirección a Facebook por medio de la imagen</p>
+	<p>Si desea contactarme por un medio, le comparto mi dirección a Facebook y LinkedIn por medio de la imagen</p>
 	<center><img src="media/perfil.JPEG"width="250" height="300" HSPACE="20" VSPACE="20" class="circular--square">
 	<a href="https://www.facebook.com/profile.php?id=100010663442252" target="_blank">
 		<img src="media/facebook.PNG" align="middle" height="150" width="150"></a>
+		<img src="media/link.PNG" align="middle" height="150" width="150"></a>
 	</center>
 	<center>
 </section><br>
@@ -351,7 +448,7 @@ Puedes contactarme también vía e-mail <a href="erickxavier.caballero@gmail.com
 				left:scroll/50 + '%'
 			})
 
-			$('.text').css({
+			$('.texto').css({
 				top: - scroll/20 + '%'
 			})
 		})
@@ -365,6 +462,9 @@ Puedes contactarme también vía e-mail <a href="erickxavier.caballero@gmail.com
    			 x.className = "topnav";
   			}
 		}
+
+
 	</script>
 </body>
 </html>
+
